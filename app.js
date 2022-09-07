@@ -1,4 +1,5 @@
 const exp = require("constants");
+const compression=require("compression");
 const express = require("express");
 const fs = require("fs");
 const morgan = require("morgan");
@@ -11,6 +12,7 @@ const hpp = require("hpp");
 
 const app = express();
 
+app.use(compression());
 const toursRoute = require("./routes/toursRoutes");
 const usersRoute = require("./routes/usersRoutes");
 const reviewsRoute=require("./routes/reviewRoute");
