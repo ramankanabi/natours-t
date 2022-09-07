@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = require("./app");
 dotenv.config({ path: "./config.env" });
 
-const db = process.env.DATABASE.replace("<password>", "fjEvKmmqKQ3E8Srt");
+const db = process.env.DATABASE.replace("<password>", process.env.DATABASE_PASSWORD);
 mongoose
   .connect(db, {
     useCreateIndex: true,
