@@ -1,5 +1,5 @@
 const exp = require("constants");
-const compression=require("compression");
+const compression = require("compression");
 const express = require("express");
 const fs = require("fs");
 const morgan = require("morgan");
@@ -11,11 +11,11 @@ const xss = require("xss-clean");
 const hpp = require("hpp");
 
 const app = express();
-
+app.enable("trust proxy");
 app.use(compression());
 const toursRoute = require("./routes/toursRoutes");
 const usersRoute = require("./routes/usersRoutes");
-const reviewsRoute=require("./routes/reviewRoute");
+const reviewsRoute = require("./routes/reviewRoute");
 // 1) GLOBAL MIDDLEWARES
 // Set security HTTP headers
 app.use(helmet());
